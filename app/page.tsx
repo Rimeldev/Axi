@@ -54,7 +54,7 @@ export default function Home() {
         </div>
         {/* --- LEFT TEXT --- */}
         <div className="flex-1">
-          <h2 className="md:text-4xl font-heading font-bold mb-4">
+          <h2 className="md:text-4xl text-3xl font-heading font-bold mb-4">
             Leur stand. Leur vitrine. Leur visibilité.
           </h2>
 
@@ -95,7 +95,7 @@ export default function Home() {
         </div>
         {/* --- LEFT TEXT --- */}
         <div className="flex-1">
-          <h2 className="md:text-4xl font-heading font-bold mb-4">
+          <h2 className="md:text-4xl text-3xl font-heading font-bold mb-4">
             Trouvez ce dont vous avez besoin, où que vous soyez.
           </h2>
 
@@ -201,7 +201,7 @@ export default function Home() {
     </div>
 
     {/* Mockup partie */}
-    <div className="w-full relative py-8 md:py-16">
+    <section id="download" className="w-full  relative py-8 md:py-16">
       {/* Fond jaune pleine largeur qui passe derrière */}
       <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[100%] md:h-[60%] bg-[#FFBE00] -z-10"></div>
 
@@ -274,7 +274,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
       {/* Section supérieure : Titre + Liste + Images */}
       <div className="w-full max-w-6xl mx-auto py-10 px-6 flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Partie gauche : Titre et liste */}

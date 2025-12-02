@@ -22,6 +22,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Axi - Le marché digital de proximité",
   description: "Retrouvez les vendeurs, PME, artisans et services de proximité autour de vous",
+   icons: {
+    icon: "/AxiLogo.png",
+  },
 };
 
 export default function RootLayout({

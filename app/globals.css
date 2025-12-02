@@ -125,6 +125,10 @@
   --z-50: 50;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* === STYLES DE BASE === */
 body {
   @apply bg-white text-gray-900;

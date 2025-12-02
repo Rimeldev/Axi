@@ -24,12 +24,11 @@ export default function Navbar() {
       <div className="hidden md:flex items-center gap-10 text-sm font-semibold">
         <Link href="/" className="hover:text-yellow-500">Accueil</Link>
         <Link href="/a-propos" className="hover:text-yellow-500">A Propos</Link>
-        <Link href="/services" className="hover:text-yellow-500">Nos services</Link>
         <Link href="/contact" className="hover:text-yellow-500">Contactez nous</Link>
 
         {/* Button */}
         <Link
-          href="/telecharger"
+          href="#download"
           className="bg-[#FFBE00] text-black px-5 py-2 rounded-full font-semibold hover:bg-[#FFBE00]/90"
         >
           Télécharger

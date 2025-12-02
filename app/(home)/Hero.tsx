@@ -7,7 +7,7 @@ export default function Hero() {
       
       {/* --- LEFT TEXT --- */}
       <div className="flex-1">
-        <h1 className="md:text-4xl font-heading font-bold mb-4">
+        <h1 className="text-4xl font-heading font-bold mb-4">
          Axì – Le marché digital de proximité
         </h1>
 
@@ -20,8 +20,9 @@ export default function Hero() {
         </p>
 
         <Link
-          href="/telecharger"
+          href="#download"
           className="bg-[#FFBE00] text-black px-6 py-3 rounded-md text-sm font-semibold hover:bg-[#FFBE00]/90 transition"
+          
         >
           Télécharger l’application
         </Link>
