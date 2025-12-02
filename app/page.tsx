@@ -7,11 +7,12 @@ import React, { useState } from 'react';
 {
   /* Mini-component propre et réutilisable */
 }
-const InfoRow = ({ label }) => (
+const InfoRow = ({ label }: { label: string }) => (
   <div className="border-2 border-[#FFBE00] rounded-lg p-4">
-    <p className=" font-semibold font-sans text-black">{label}</p>
+    <p className="font-semibold font-sans text-black">{label}</p>
   </div>
 );
+
 
 export default function Home() {
 
