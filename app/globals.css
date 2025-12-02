@@ -1,26 +1,277 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* === COULEURS PRINCIPALES === */
+  --color-primary: #F4C430;
+  --color-primary-dark: #D4A420;
+  --color-primary-light: #FFD54F;
+  
+  --color-secondary: #1A1A1A;
+  --color-secondary-light: #2D2D2D;
+  
+  --color-accent: #FF6B00;
+  
+  /* Couleurs neutres */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+  
+  /* Couleurs sémantiques */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+  
+  /* === TYPOGRAPHIE === */
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  
+  /* Tailles de police */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  
+  /* Poids de police */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  /* === ESPACEMENTS === */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+  
+  /* === BORDER RADIUS === */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 3rem;
+  --radius-full: 9999px;
+  
+  /* === OMBRES === */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-DEFAULT: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-yellow: 0 10px 30px -5px rgba(244, 196, 48, 0.3);
+  
+  /* === BREAKPOINTS === */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  
+  /* === TRANSITIONS === */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* === LARGEURS MAX === */
+  --max-width-xs: 20rem;
+  --max-width-sm: 24rem;
+  --max-width-md: 28rem;
+  --max-width-lg: 32rem;
+  --max-width-xl: 36rem;
+  --max-width-2xl: 42rem;
+  --max-width-3xl: 48rem;
+  --max-width-4xl: 56rem;
+  --max-width-5xl: 64rem;
+  --max-width-6xl: 72rem;
+  --max-width-7xl: 80rem;
+  --max-width-screen: 100vw;
+  
+  /* === Z-INDEX === */
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* === STYLES DE BASE === */
+body {
+  @apply bg-white text-gray-900;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* === CLASSES UTILITAIRES PERSONNALISÉES === */
+
+/* Boutons */
+.btn-primary {
+  @apply bg-primary text-secondary font-semibold px-6 py-3 rounded-full 
+         hover:bg-primary-dark transition-all duration-300 
+         shadow-md hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-white text-secondary border-2 border-gray-200 font-semibold 
+         px-6 py-3 rounded-full hover:border-primary 
+         transition-all duration-300;
+}
+
+.btn-outline {
+  @apply bg-transparent border-2 border-primary text-secondary 
+         font-semibold px-6 py-3 rounded-full 
+         hover:bg-primary hover:text-secondary 
+         transition-all duration-300;
+}
+
+/* Cards avec bordure jaune */
+.card-feature {
+  @apply bg-white border-2 border-primary rounded-2xl p-6 
+         hover:shadow-yellow transition-all duration-300;
+}
+
+.card-simple {
+  @apply bg-white border border-gray-200 rounded-xl p-4 
+         hover:border-primary transition-all duration-300;
+}
+
+/* Sections */
+.section-padding {
+  @apply py-16 md:py-24 px-4 md:px-8;
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Titres */
+.heading-xl {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-secondary leading-tight font-heading;
+}
+
+.heading-lg {
+  @apply text-3xl md:text-4xl font-bold text-secondary leading-tight font-heading;
+}
+
+.heading-md {
+  @apply text-2xl md:text-3xl font-bold text-secondary font-heading;
+}
+
+.heading-sm {
+  @apply text-xl md:text-2xl font-semibold text-secondary font-heading;
+}
+
+/* Texte */
+.text-body {
+  @apply text-base md:text-lg text-gray-700 leading-relaxed font-sans;
+}
+
+/* Badge/Tag */
+.badge {
+  @apply inline-block bg-primary text-secondary text-sm font-medium 
+         px-4 py-2 rounded-full;
+}
+
+.badge-outline {
+  @apply inline-block border-2 border-primary text-secondary text-sm 
+         font-medium px-4 py-2 rounded-full;
+}
+
+/* Images avec effet */
+.image-rounded {
+  @apply rounded-3xl overflow-hidden;
+}
+
+/* Fond jaune avec vague */
+.bg-wave-yellow {
+  @apply bg-primary relative;
+}
+
+/* Navigation */
+.nav-link {
+  @apply text-secondary font-medium hover:text-primary 
+         transition-colors duration-300;
+}
+
+/* Stats/Chiffres */
+.stat-number {
+  @apply text-4xl md:text-5xl font-bold text-secondary font-heading;
+}
+
+.stat-label {
+  @apply text-sm md:text-base text-gray-600 font-sans;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.6s ease-out;
 }
